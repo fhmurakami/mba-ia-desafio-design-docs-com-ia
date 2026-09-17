@@ -1,3 +1,23 @@
-# Tracker
+# Tracker de Rastreabilidade
 
-<!-- acompanhamento do trabalho será preenchido posteriormente -->
+| ID | Documento | Tipo | Conteúdo (resumo) | Fonte | Localização |
+| --- | --- | --- | --- | --- | --- |
+| PRD-FR-01 | `docs/PRD.md` | Requisito Funcional | Cadastro de webhook via POST (URL e status) | `TRANSCRICAO` | `[09:31] Marcos`, `[09:32] Larissa` |
+| PRD-FR-02 | `docs/PRD.md` | Requisito Funcional | Geração de secret por endpoint ao criar webhook | `TRANSCRICAO` | `[09:21] Sofia`, `[09:22] Sofia`, `[09:31] Marcos` |
+| PRD-FR-03 | `docs/PRD.md` | Requisito Funcional | Edição de webhook via PATCH | `TRANSCRICAO` | `[09:33] Bruno` |
+| PRD-FR-04 | `docs/PRD.md` | Requisito Funcional | Deleção (DELETE) e Listagem (GET) de webhooks | `TRANSCRICAO` | `[09:33] Bruno` |
+| PRD-FR-05 | `docs/PRD.md` | Requisito Funcional | Rotação de secret com grace period de 24h | `TRANSCRICAO` | `[09:21] Sofia`, `[09:22] Sofia` |
+| PRD-FR-06 | `docs/PRD.md` | Requisito Funcional | Filtro de eventos (status desejados pelo cliente) | `TRANSCRICAO` | `[09:33] Marcos`, `[09:34] Bruno` |
+| PRD-FR-07 | `docs/PRD.md` | Requisito Funcional | Histórico de envios recentes (deliveries) | `TRANSCRICAO` | `[09:34] Marcos` |
+| PRD-FR-08 | `docs/PRD.md` | Requisito Funcional | Conteúdo do payload gerado como snapshot | `TRANSCRICAO` | `[09:43] Diego`, `[09:52] Larissa`, `[09:52] Diego` |
+| PRD-FR-09 | `docs/PRD.md` | Requisito Funcional | Retry policy com 5 tentativas e backoff | `TRANSCRICAO` | `[09:15] Diego`, `[09:17] Diego`, `[09:17] Larissa` |
+| PRD-FR-10 | `docs/PRD.md` | Requisito Funcional | Replay manual de DLQ para administradores | `TRANSCRICAO` | `[09:18] Diego`, `[09:35] Diego`, `[09:36] Sofia`, `[09:36] Larissa` |
+| PRD-NFR-01 | `docs/PRD.md` | Requisito Não Funcional | Latência alvo inferior a 10s para notificação | `TRANSCRICAO` | `[09:02] Marcos`, `[09:09] Diego`, `[09:10] Larissa` |
+| PRD-NFR-02 | `docs/PRD.md` | Requisito Não Funcional | Segurança com HMAC-SHA256 e HTTPS | `TRANSCRICAO` | `[09:20] Sofia`, `[09:23] Sofia` |
+| PRD-NFR-03 | `docs/PRD.md` | Requisito Não Funcional | Limite de tamanho de payload em 64KB | `TRANSCRICAO` | `[09:23] Sofia`, `[09:24] Diego`, `[09:24] Larissa` |
+| PRD-NFR-04 | `docs/PRD.md` | Requisito Não Funcional | Resiliência at-least-once com header X-Event-Id | `TRANSCRICAO` | `[09:24] Diego`, `[09:25] Diego`, `[09:26] Larissa` |
+| PRD-SCOPE-01 | `docs/PRD.md` | Restrição | Descartado: disparo síncrono no service de orders | `TRANSCRICAO` | `[09:04] Bruno`, `[09:04] Larissa`, `[09:06] Diego` |
+| PRD-SCOPE-02 | `docs/PRD.md` | Restrição | Adiado: e-mail alertando sobre falhas repetidas | `TRANSCRICAO` | `[09:37] Marcos`, `[09:37] Larissa` |
+| PRD-SCOPE-03 | `docs/PRD.md` | Restrição | Adiado: dashboard visual para webhooks | `TRANSCRICAO` | `[09:39] Marcos`, `[09:40] Larissa` |
+| PRD-SCOPE-04 | `docs/PRD.md` | Restrição | Adiado: rate limiting de envios por parte do OMS | `TRANSCRICAO` | `[09:38] Diego`, `[09:39] Larissa` |
+| PRD-SCOPE-05 | `docs/PRD.md` | Restrição | Descartado: ordering global (garantia de ordem) | `TRANSCRICAO` | `[09:12] Larissa`, `[09:12] Diego`, `[09:13] Larissa` |
