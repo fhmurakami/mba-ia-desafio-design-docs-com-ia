@@ -1,5 +1,9 @@
 # Tracker de Rastreabilidade
 
+Este documento mapeia cada item registrado nos documentos à sua origem na transcrição ou no código.
+
+## PRD (Product Requirement Document)
+
 | ID | Documento | Tipo | Conteúdo (resumo) | Fonte | Localização |
 | --- | --- | --- | --- | --- | --- |
 | PRD-FR-01 | `docs/PRD.md` | Requisito Funcional | Cadastro de webhook via POST (URL e status) | `TRANSCRICAO` | `[09:31] Marcos`, `[09:32] Larissa` |
@@ -21,3 +25,15 @@
 | PRD-SCOPE-03 | `docs/PRD.md` | Restrição | Adiado: dashboard visual para webhooks | `TRANSCRICAO` | `[09:39] Marcos`, `[09:40] Larissa` |
 | PRD-SCOPE-04 | `docs/PRD.md` | Restrição | Adiado: rate limiting de envios por parte do OMS | `TRANSCRICAO` | `[09:38] Diego`, `[09:39] Larissa` |
 | PRD-SCOPE-05 | `docs/PRD.md` | Restrição | Descartado: ordering global (garantia de ordem) | `TRANSCRICAO` | `[09:12] Larissa`, `[09:12] Diego`, `[09:13] Larissa` |
+
+## RFC (Request for Comments)
+
+| ID | Documento | Tipo | Conteúdo (resumo) | Fonte | Localização |
+| --- | --- | --- | --- | --- | --- |
+| RFC-ALT-01 | `docs/RFC.md` | Trade-off | Alternativa descartada: Disparo síncrono no OrderService | `TRANSCRICAO` | `[09:04] Bruno`, `[09:04] Larissa` |
+| RFC-ALT-02 | `docs/RFC.md` | Trade-off | Alternativa descartada: Infraestrutura dedicada de Stream | `TRANSCRICAO` | `[09:07] Larissa`, `[09:07] Diego` |
+| RFC-ALT-03 | `docs/RFC.md` | Trade-off | Alternativa descartada: Trigger no banco de dados (MySQL) | `TRANSCRICAO` | `[09:09] Bruno`, `[09:09] Diego` |
+| RFC-OPEN-01 | `docs/RFC.md` | Restrição | Em aberto: Rate limiting do envio aos clientes | `TRANSCRICAO` | `[09:38] Diego`, `[09:39] Larissa` |
+| RFC-OPEN-02 | `docs/RFC.md` | Restrição | Em aberto: Alerta via email em falhas de webhook | `TRANSCRICAO` | `[09:37] Marcos`, `[09:37] Larissa` |
+| RFC-DEC-01 | `docs/RFC.md` | Decisão | Uso do Outbox Pattern integrado ao MySQL | `TRANSCRICAO` | `[09:06] Diego`, `[09:08] Larissa` |
+| RFC-DEC-02 | `docs/RFC.md` | Decisão | Separação do Worker em processo de polling | `TRANSCRICAO` | `[09:09] Diego`, `[09:11] Larissa`, `[09:11] Diego` |
