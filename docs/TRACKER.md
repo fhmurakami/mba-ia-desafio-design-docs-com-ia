@@ -38,6 +38,23 @@ Este documento mapeia cada item registrado nos documentos à sua origem na trans
 | RFC-DEC-01 | `docs/RFC.md` | Decisão | Uso do Outbox Pattern integrado ao MySQL | `TRANSCRICAO` | `[09:06] Diego`, `[09:08] Larissa` |
 | RFC-DEC-02 | `docs/RFC.md` | Decisão | Separação do Worker em processo de polling | `TRANSCRICAO` | `[09:09] Diego`, `[09:11] Larissa`, `[09:11] Diego` |
 
+## FDD (Feature Design Document)
+
+| ID | Documento | Tipo | Conteúdo (resumo) | Fonte | Localização |
+| --- | --- | --- | --- | --- | --- |
+| FDD-FLUX-01 | `docs/FDD.md` | Fluxo | Criação do evento na Outbox na transação principal | `TRANSCRICAO` | `[09:40] Bruno`, `[09:41] Bruno` |
+| FDD-FLUX-02 | `docs/FDD.md` | Fluxo | Processamento via Worker (2s) e timeout (10s) | `TRANSCRICAO` | `[09:09] Diego`, `[09:42] Diego` |
+| FDD-FLUX-03 | `docs/FDD.md` | Fluxo | Retry de 5 tentativas e envio para a DLQ | `TRANSCRICAO` | `[09:15] Diego`, `[09:17] Larissa`, `[09:18] Diego` |
+| FDD-API-01 | `docs/FDD.md` | Contrato | POST /webhooks para criação da configuração | `TRANSCRICAO` | `[09:31] Marcos` |
+| FDD-API-02 | `docs/FDD.md` | Contrato | GET /webhooks para listagem das configurações | `TRANSCRICAO` | `[09:33] Bruno` |
+| FDD-API-03 | `docs/FDD.md` | Contrato | GET /webhooks/:id/deliveries histórico entregas | `TRANSCRICAO` | `[09:34] Marcos` |
+| FDD-API-04 | `docs/FDD.md` | Contrato | POST /admin/webhooks/dead-letter/:id/replay | `TRANSCRICAO` | `[09:35] Diego` |
+| FDD-ERR-01 | `docs/FDD.md` | Matriz de Erro | Utilização de prefixos WEBHOOK_* para custom errors | `TRANSCRICAO` | `[09:28] Bruno` |
+| FDD-INT-01 | `docs/FDD.md` | Integração | Alteração no changeStatus para webhook event | `CODIGO` | `src/modules/orders/order.service.ts` |
+| FDD-INT-02 | `docs/FDD.md` | Integração | Extensão ou instanciamento para lançar novo erro | `CODIGO` | `src/shared/errors/app-error.ts` |
+| FDD-INT-03 | `docs/FDD.md` | Integração | Interceptação natural sem mudança | `CODIGO` | `src/middlewares/error.middleware.ts` |
+| FDD-INT-04 | `docs/FDD.md` | Integração | Importação e log de Worker usando base nativa | `CODIGO` | `src/shared/logger/index.ts` |
+
 ## ADRs (Architecture Decision Records)
 
 | ID | Documento | Tipo | Conteúdo (resumo) | Fonte | Localização |
@@ -49,6 +66,6 @@ Este documento mapeia cada item registrado nos documentos à sua origem na trans
 | ADR-004 | `docs/adrs/ADR-004-garantia-at-least-once.md` | Decisão | Garantia at-least-once com X-Event-Id | `TRANSCRICAO` | `[09:24] Diego`, `[09:25] Diego`, `[09:26] Larissa` |
 | ADR-005 | `docs/adrs/ADR-005-worker-em-polling.md` | Decisão | Worker em processo separado em polling | `TRANSCRICAO` | `[09:09] Diego`, `[09:10] Larissa`, `[09:11] Diego` |
 | ADR-006 | `docs/adrs/ADR-006-reuso-padroes-projeto.md` | Decisão | Reuso dos padrões existentes do projeto | `TRANSCRICAO` | `[09:28] Bruno`, `[09:29] Bruno`, `[09:30] Larissa` |
-| ADR-006-C1 | `docs/adrs/ADR-006-reuso-padroes-projeto.md` | Decisão | Reuso de AppError e padrões de projeto | `CODIGO` | `src/shared/errors/` |
+| ADR-006-C1 | `docs/adrs/ADR-006-reuso-padroes-projeto.md` | Decisão | Reuso de AppError e padrões de projeto | `CODIGO` | `src/shared/errors/app-error.ts` |
 | ADR-006-C2 | `docs/adrs/ADR-006-reuso-padroes-projeto.md` | Decisão | Reuso de middleware de erro existente | `CODIGO` | `src/middlewares/error.middleware.ts` |
-| ADR-006-C3 | `docs/adrs/ADR-006-reuso-padroes-projeto.md` | Decisão | Reuso do Logger padrão da aplicação | `CODIGO` | `src/shared/logger/` |
+| ADR-006-C3 | `docs/adrs/ADR-006-reuso-padroes-projeto.md` | Decisão | Reuso do Logger padrão da aplicação | `CODIGO` | `src/shared/logger/index.ts` |
