@@ -1,5 +1,7 @@
 # Sistema de Webhooks: De Transcrição a Design Docs com IA
 
+> **Nota:** As instruções originais do desafio podem ser encontradas no arquivo [`ENUNCIADO.md`](ENUNCIADO.md).
+
 ## Sobre o Desafio
 Este repositório contém a entrega do desafio prático focado em transformar a transcrição bruta de uma reunião técnica em um pacote completo e maduro de especificações de design de software (Design Docs). O objetivo central foi atuar como um "maestro" de Inteligência Artificial, orientando-a a extrair requisitos funcionais, não funcionais e decisões arquiteturais do texto, garantindo que tudo estivesse coeso com a base de código preexistente do Order Management System (OMS).
 
